@@ -1,0 +1,47 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+
+
+button {
+    align-self: center;
+    width: 20%;
+}
+
+
+.textcontainer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+.status {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-self: center;
+    justify-content: center;
+
+}
+.gridbox{
+    position: relative;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 2.5rem;
+    height: 100px;
+    width: 100px;
+}
