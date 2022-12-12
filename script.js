@@ -43,8 +43,6 @@ const gameboard = (() => {
                 winCheck();
                 if (stalemate === null) {stalemateCheck()};
                 displayController.showStatus();
-
-
             })
         return {boardButtons};
         })    
@@ -69,8 +67,6 @@ const gameboard = (() => {
             [0,4,8],
             [2,4,6]
         ];
-
- 
         
         winCombos.forEach(combo => {
             const countX = [];
@@ -96,27 +92,21 @@ const gameboard = (() => {
                 }
             })
         })
-
-
-      
-
-
     };
 
     const getWinner = () => {
         return winner;
     }
 
-    
-
     return {playRound, winCheck, getWinner};
 
 })();
 
 const displayController = (() => {
-    // Updates grid using the array of X's and O's
+    // Start the game
     gameboard.playRound();
 
+    //Update the status text depending if a player won.
     const showStatus = () => {
         const status = document.querySelector(".status");
         if (gameboard.getWinner()) {
@@ -125,7 +115,7 @@ const displayController = (() => {
             btn.innerHTML = "Play Again?";
             status.appendChild(btn);
             btn.onclick = function () {
-                location.reload();
+                location.reload();          // Restart button upon win
               };
         }
         else { 
